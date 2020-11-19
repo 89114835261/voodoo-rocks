@@ -1,0 +1,12 @@
+.app {
+  margin: 20px 0 0 0;
+}
+
+.content {
+  width: var(--resize-main-content);
+  -moz-columns: var(--resize-card-column-size) auto;
+  -webkit-columns: var(--resize-card-column-size) auto;
+  columns: var(--resize-card-column-size) auto;
+  margin: 10px auto 0;
+  transition: var(--main-transition);
+}

@@ -1,0 +1,60 @@
+@mixin placeholder-animate($value, $value2) {
+    &::-webkit-input-placeholder {
+        opacity: $value2; transition: var(--main-transition);
+        text-indent: $value;
+    }
+    &::-moz-placeholder {
+        opacity: $value2; transition: var(--main-transition);
+        text-indent: $value;
+    }
+    &:-moz-placeholder {
+        opacity: $value2; transition: var(--main-transition);
+        text-indent: $value;
+    }
+    &:-ms-input-placeholder {
+        opacity: $value2; transition: var(--main-transition);
+        text-indent: $value;
+    }  
+}
+
+.input-element {
+    border: solid 1px var(--blue-1);
+    border-radius: 3px;
+    background-color: #fff;
+    width: 300px;
+    display: flex;
+    flex-grow: var(--resize-find-input-grow);
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--main-transition);
+    .find-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        border-right: solid 1px var(--blue-1);
+        border-radius: 3px 0 0 3px;
+        img {
+            width: 22px;
+            height: 22px;
+            margin: 4px 0 0 8px;
+            opacity: 0.4;
+        }
+    }
+    input {
+        margin-left: 50px;
+        display: block;
+        box-sizing: content-box;
+        background: none;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        @include placeholder-animate(0, 1);
+        &:focus {
+            outline: none;
+            @include placeholder-animate(50px, 0);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@mixin _860 {
+    @media (max-width: 860px){
+        @content;
+    }
+}
+@mixin _515 {
+    @media (max-width: 515px){
+        @content;
+    }
+}
+
+:root {
+    --main-color: #edf2f7;
+    --main-transition: all 0.25s ease-in-out;
+    --blue-1: #e1e8f0;
+    --blue-2: #2374de;
+    --gray-1: #d0d2d5;
+    --resize-card-column-size: 260px;
+    --resize-main-content: 940px;
+    --resize-find-input-grow: 0;
+    @include _860 {
+        --resize-main-content: 620px;
+        --resize-find-input-grow: 1;
+    }
+    @include _515 {
+        --resize-main-content: 96%;
+        --resize-card-column-size: auto;
+    }
+}
+
+body {
+    background-color: var(--main-color);
+}
